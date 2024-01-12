@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS CROD Application for User</title>
+    
+</head>
+<body ng-controller="userController">
+    <script src="angular.js"></script>
+    <h1> User Management</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <button ng-click="editUser(user)">Edit</button>
+                    <button ng-click="deleteUser(user)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2>Add User</h2>
+    <input type="text" ng-model="newUser.name" placeholder="Name">
+    <input type="email" ng-model="newUser.email" placeholder="Email">
+    <button ng-click="createUser()">Create</button>
+    <br>
+    <h2>Edit User</h2>
+    <input type="text" ng-model="editedUser.name" placeholder="Name">
+    <input type="email" ng-model="editedUser.email" placeholder="Email">
+    <button ng-click="updateUser()">updateUser</button>
+    <br>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
